@@ -1,0 +1,23 @@
+<h1>Welcome to My Website</h1>
+    <% if (!authenticate) { %>
+      <p>Please <a href="/login">log in</a> or <a href="/register">register</a>.</p>
+    <% } else { %>
+      <p>Welcome, <%= user.username %>!</p>
+      <a href="/apply">Sub application</a>
+      <form action="/logout?_method=DELETE" method="POST">
+        <button type="submit">Log Out</button>
+      </form>
+    <% } %>
+
+Site still a prototype. All data uploaded will be deleted <br>
+<br>
+Features I want:<br>
+Ability to create a sub/ dom account.<br>
+Subs can search for doms.<br>
+Sub and dom create contract, to symbolise ownership.<br>
+Then the dom has access to a sub manager where they can manage all their subs<br>
+They can set tasks.<br>
+There is an option for the sub to submit tasks they have done, then the domme can approve it or set punishment<br>
+It will automaticaly take tribute fee e.g. 50£ each week<br>
+Sub has to pay to submit application<br>
+Dom has public profile showing informations such as costs/ services she offers<br>

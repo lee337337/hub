@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Applications</title>
+  </head>
+  <body>
+    <h1>Applications</h1>
+    <% if (applications.length === 0) { %>
+      <p>No applications have been submitted yet.</p>
+    <% } else { %>
+      <ul>
+        <% applications.forEach((application) => { %>
+            <% ref = "/applications/".concat(application.name)%>
+            
+          <li>
+            <a href= <%= ref %> > <%= application.name %> </a>
+
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+  <a href="/apply">Add new application</a> <br>
+  <a href="/">Home</a>
+  <form action="/logout?_method=DELETE" method="POST">
+    <button type="submit">Log Out</button>
+  </form>
